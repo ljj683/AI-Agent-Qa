@@ -43,83 +43,181 @@ st.set_page_config(
 
 CUSTOM_CSS = """
 <style>
+/* 页面整体 */
 .stApp {
-    background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 45%, #fdf2f8 100%);
+    background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 48%, #fdf2f8 100%);
 }
+
+/* 主体宽度和顶部距离 */
+.block-container {
+    max-width: 1280px;
+    padding-top: 1.2rem;
+    padding-bottom: 2rem;
+}
+
+/* 左侧栏 */
 section[data-testid="stSidebar"] {
-    background: rgba(255, 255, 255, 0.78);
-    backdrop-filter: blur(18px);
-    border-right: 1px solid rgba(148, 163, 184, 0.25);
+    background: rgba(255, 255, 255, 0.86);
+    border-right: 1px solid rgba(148, 163, 184, 0.22);
 }
+
+section[data-testid="stSidebar"] h1,
+section[data-testid="stSidebar"] h2,
+section[data-testid="stSidebar"] h3 {
+    color: #0f172a;
+}
+
+/* 顶部 Hero */
 .hero {
-    padding: 32px 36px;
-    border-radius: 28px;
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.96), rgba(124, 58, 237, 0.92));
+    padding: 28px 34px;
+    border-radius: 24px;
+    background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
     color: white;
-    box-shadow: 0 22px 50px rgba(79, 70, 229, 0.22);
-    margin-bottom: 28px;
+    box-shadow: 0 18px 45px rgba(79, 70, 229, 0.25);
+    margin-bottom: 22px;
 }
+
 .hero-badge {
     display: inline-block;
-    padding: 7px 13px;
+    padding: 6px 13px;
     border-radius: 999px;
     font-size: 13px;
     font-weight: 700;
     background: rgba(255, 255, 255, 0.18);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    margin-bottom: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    margin-bottom: 12px;
 }
+
 .hero-title {
-    font-size: 44px;
-    line-height: 1.15;
+    font-size: 38px;
+    line-height: 1.18;
     font-weight: 900;
-    letter-spacing: -1.1px;
-    margin-bottom: 14px;
+    letter-spacing: -0.8px;
+    margin-bottom: 10px;
 }
+
 .hero-desc {
-    font-size: 18px;
-    line-height: 1.8;
-    color: rgba(255, 255, 255, 0.92);
-    max-width: 1080px;
+    font-size: 16px;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.94);
+    max-width: 980px;
 }
+
+/* 功能卡片 */
 .feature-card {
-    padding: 22px;
-    border-radius: 22px;
-    background: rgba(255, 255, 255, 0.82);
-    border: 1px solid rgba(148, 163, 184, 0.22);
-    box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
-    min-height: 145px;
-}
-.feature-icon {font-size: 30px; margin-bottom: 10px;}
-.feature-title {font-size: 18px; font-weight: 850; color: #111827; margin-bottom: 8px;}
-.feature-text {font-size: 14px; color: #475569; line-height: 1.65;}
-.answer-box {
-    padding: 22px 24px;
+    padding: 18px 20px;
     border-radius: 20px;
-    background: rgba(255, 255, 255, 0.95);
-    border-left: 6px solid #4f46e5;
-    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.10);
+    background: rgba(255, 255, 255, 0.86);
+    border: 1px solid rgba(203, 213, 225, 0.58);
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+    min-height: 128px;
+    transition: all 0.18s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 38px rgba(15, 23, 42, 0.12);
+}
+
+.feature-icon {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.feature-title {
+    font-size: 17px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 7px;
+}
+
+.feature-text {
+    font-size: 13.5px;
+    color: #475569;
+    line-height: 1.62;
+}
+
+/* Tab 样式 */
+button[data-baseweb="tab"] {
+    font-weight: 700;
+    font-size: 15px;
+}
+
+div[data-testid="stTabs"] {
+    margin-top: 8px;
+}
+
+/* 标题 */
+h1, h2, h3 {
+    color: #0f172a;
+    letter-spacing: -0.4px;
+}
+
+/* 信息面板 */
+.info-panel {
+    padding: 20px 22px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.84);
+    border: 1px solid rgba(203, 213, 225, 0.65);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+    margin-bottom: 16px;
     line-height: 1.8;
 }
-.info-panel {
-    padding: 22px;
-    border-radius: 22px;
-    background: rgba(248, 250, 252, 0.9);
-    border: 1px solid rgba(203, 213, 225, 0.75);
-    margin-bottom: 18px;
+
+/* 回答框 */
+.answer-box {
+    padding: 20px 22px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.96);
+    border-left: 6px solid #4f46e5;
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.10);
+    line-height: 1.85;
 }
-.small-note {color: #64748b; font-size: 14px; line-height: 1.7;}
+
+/* 提示文字 */
+.small-note {
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+/* 按钮 */
 div.stButton > button:first-child {
     border-radius: 999px;
-    padding: 0.65rem 1.4rem;
-    font-weight: 750;
+    padding: 0.62rem 1.35rem;
+    font-weight: 800;
     border: none;
     background: linear-gradient(135deg, #2563eb, #7c3aed);
     color: white;
+    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.22);
 }
+
 div.stButton > button:first-child:hover {
-    box-shadow: 0 12px 26px rgba(79, 70, 229, 0.28);
     transform: translateY(-1px);
+    box-shadow: 0 12px 25px rgba(79, 70, 229, 0.3);
+}
+
+/* 文件上传框 */
+section[data-testid="stFileUploaderDropzone"] {
+    border-radius: 18px;
+    border: 1.5px dashed #818cf8;
+    background: rgba(255, 255, 255, 0.68);
+}
+
+/* 数据表 */
+div[data-testid="stDataFrame"] {
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+/* 展开框 */
+details {
+    border-radius: 12px !important;
+}
+
+/* 隐藏 Streamlit 默认页脚 */
+footer {
+    visibility: hidden;
 }
 </style>
 """
@@ -151,68 +249,78 @@ if "builtin_history" not in st.session_state:
     st.session_state.builtin_history = []
 
 with st.sidebar:
-    st.markdown("## 🤖 AI-Agent-Qa")
-    st.write("多格式文档问答AI智能体")
-    st.divider()
-    st.markdown("### 核心能力")
-    st.write("- 任意 PDF / Word / TXT / MD 上传问答")
-    st.write("- 文档解析、文本分块、TF-IDF 向量化")
-    st.write("- 余弦相似度 Top-K 检索")
-    st.write("- DeepSeek 大模型回答生成")
-    st.write("- 内置多文档知识库问答")
-    st.write("- 朴素贝叶斯、逻辑回归、MLP 文本分类")
-    st.divider()
-    st.markdown("### 运行配置")
-    st.write("模型：", os.getenv("DEEPSEEK_MODEL", "deepseek-v4-flash"))
-    st.write("Top-K：", os.getenv("TOP_K", "5"))
-    st.write("向量后端：", os.getenv("VECTOR_BACKEND", "tfidf"))
-    st.write("DeepSeek Key：", "已配置" if os.getenv("DEEPSEEK_API_KEY") else "未配置")
+    st.sidebar.markdown("## 🤖 AI-Agent-Qa")
+    st.sidebar.markdown("多格式文档问答 AI 智能体")
+    st.sidebar.divider()
+    st.sidebar.markdown("### 核心能力")
+    st.sidebar.markdown(
+        """
+    - PDF / Word / TXT / MD 上传问答
+    - 文档解析、清洗与分块
+    - TF-IDF 向量化检索
+    - 余弦相似度 Top-K 匹配
+    - DeepSeek 结构化回答生成
+    - 内置多文档知识库问答
+    - 文本分类模型评估
+    """
+    )
+    st.sidebar.divider()
+    st.sidebar.markdown("### 运行配置")
+    st.sidebar.write("模型：", os.getenv("DEEPSEEK_MODEL", "deepseek-v4-flash"))
+    st.sidebar.write("Top-K：", os.getenv("TOP_K", "5"))
+    st.sidebar.write("向量后端：", os.getenv("VECTOR_BACKEND", "tfidf"))
+    st.sidebar.write("DeepSeek Key：", "已配置" if os.getenv("DEEPSEEK_API_KEY") else "未配置")
 
 st.markdown(
     """
 <div class="hero">
-  <div class="hero-badge">AI Document Agent · RAG · DeepSeek · Machine Learning</div>
-  <div class="hero-title">🤖 AI-Agent-Qa 多格式文档问答智能体</div>
-  <div class="hero-desc">
-    支持上传任意 PDF / Word / TXT / Markdown 文档，自动完成文档解析、文本分块、TF-IDF 向量化、
-    余弦相似度检索，并结合 DeepSeek 大模型生成可追溯的智能回答。
-  </div>
+    <div class="hero-badge">AI Document Agent · RAG · DeepSeek · Machine Learning</div>
+    <div class="hero-title">🤖多格式文档问答智能体</div>
+    <div class="hero-desc">
+        支持上传 PDF、Word、TXT、Markdown 文档，自动完成文档解析、文本分块、TF-IDF 向量化、
+        余弦相似度检索，并结合 DeepSeek 大模型生成可追溯的智能回答。
+    </div>
 </div>
 """,
-    unsafe_allow_html=True,
+    unsafe_allow_html=True
 )
 
 col1, col2, col3, col4 = st.columns(4)
+col1, col2, col3, col4 = st.columns(4)
+
 with col1:
     st.markdown("""
 <div class="feature-card">
-  <div class="feature-icon">📤</div>
-  <div class="feature-title">任意文档上传</div>
-  <div class="feature-text">支持 PDF、Word、TXT、Markdown，可单文件或多文件同时上传。</div>
+    <div class="feature-icon">📤</div>
+    <div class="feature-title">文档上传解析</div>
+    <div class="feature-text">支持 PDF、Word、TXT、Markdown，完成文本抽取与基础清洗。</div>
 </div>
 """, unsafe_allow_html=True)
+
 with col2:
     st.markdown("""
 <div class="feature-card">
-  <div class="feature-icon">🔎</div>
-  <div class="feature-title">RAG 检索增强</div>
-  <div class="feature-text">文本分块、TF-IDF 向量化、余弦相似度 Top-K 检索。</div>
+    <div class="feature-icon">🔎</div>
+    <div class="feature-title">RAG 检索增强</div>
+    <div class="feature-text">文本分块、TF-IDF 向量化、余弦相似度 Top-K 检索。</div>
 </div>
 """, unsafe_allow_html=True)
+
 with col3:
     st.markdown("""
 <div class="feature-card">
-  <div class="feature-icon">🧠</div>
-  <div class="feature-title">机器学习模型</div>
-  <div class="feature-text">集成朴素贝叶斯、逻辑回归、MLP 神经网络文本分类模型。</div>
+    <div class="feature-icon">🧠</div>
+    <div class="feature-title">问题分类模型</div>
+    <div class="feature-text">集成朴素贝叶斯、逻辑回归、MLP 神经网络分类模型。</div>
 </div>
 """, unsafe_allow_html=True)
+
 with col4:
     st.markdown("""
 <div class="feature-card">
-  <div class="feature-icon">⚡</div>
-  <div class="feature-title">DeepSeek 回答生成</div>
-  <div class="feature-text">基于检索上下文生成结构化答案，并展示来源片段与相似度。</div>
+    <div class="feature-icon">⚡</div>
+    <div class="feature-title">DeepSeek 回答生成</div>
+    <div class="feature-text">基于检索上下文生成结构化回答，并展示来源片段与相似度。</div>
 </div>
 """, unsafe_allow_html=True)
 
@@ -226,12 +334,12 @@ tab_upload, tab_builtin, tab_model, tab_about = st.tabs([
 ])
 
 with tab_upload:
-    st.markdown("### 📤 上传文档，即刻问答")
+    st.markdown("## 📤 上传文档，即刻问答")
     st.markdown(
-        '<div class="small-note">上传任意 PDF / Word / TXT / Markdown 文档，系统会临时构建检索索引并基于上传内容回答问题。支持多文件同时上传。</div>',
-        unsafe_allow_html=True,
+        '<div class="small-note">上传文档后，系统会临时构建检索索引，并基于上传内容回答问题。</div>',
+        unsafe_allow_html=True
     )
-    st.info("扫描版 PDF 可能无法直接提取文字，建议先使用 MinerU/OCR 转为 Markdown 或 TXT 后再上传。")
+    st.info("提示：文本型 PDF 和 Word 可直接解析；扫描版 PDF 建议先使用 MinerU/OCR 转为 Markdown 或 TXT 后再上传。")
 
     uploaded_files = st.file_uploader(
         "上传文档文件：",
