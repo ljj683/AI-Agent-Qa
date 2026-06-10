@@ -1,0 +1,13 @@
+.venv/
+venv/
+__pycache__/
+*.pyc
+.env
+*.log
+.DS_Store
+.cache/
+.streamlit/secrets.toml
+
+# 原始大 PDF 不建议上传 GitHub，避免仓库过大
+data/raw_docs/*.pdf
+data/raw_docs/**/*.pdf

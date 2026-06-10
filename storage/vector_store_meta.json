@@ -1,0 +1,4 @@
+{
+  "backend": "tfidf",
+  "model_name": "TfidfVectorizer-char-2-4"
+}
